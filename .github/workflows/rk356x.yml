@@ -1,5 +1,5 @@
-name: Build u-boot for RK356x
-run-name: u-boot ${{ inputs.uboot_ref }} for RK356x
+name: Build u-boot for RK3566-odroid-m1s
+run-name: u-boot ${{ inputs.uboot_ref }} for rk3566-odroid-m1s
 on:
   workflow_dispatch:
     inputs:
@@ -16,122 +16,16 @@ on:
 
 jobs:
   build:
-    name: ${{ matrix.boards.name }}
+    name: rk3566-odroid-m1s
     runs-on: ubuntu-latest
     strategy:
       matrix:
         boards:
           [
             {
-              "name": "rk3566-generic",
-              "config": "generic-rk3568_defconfig",
-              "variant": "RK3566",
-            },
-            {
               "name": "rk3566-odroid-m1s",
               "config": "odroid-m1s-rk3566_defconfig",
               "variant": "RK3566",
-            },
-            {
-              "name": "rk3566-orangepi-3b",
-              "config": "orangepi-3b-rk3566_defconfig",
-              "variant": "RK3566",
-            },
-            {
-              "name": "rk3566-pinenote",
-              "config": "pinenote-rk3566_defconfig",
-              "variant": "RK3566",
-            },
-            {
-              "name": "rk3566-pinetab2",
-              "config": "pinetab2-rk3566_defconfig",
-              "variant": "RK3566",
-            },
-            {
-              "name": "rk3566-quartz64-a",
-              "config": "quartz64-a-rk3566_defconfig",
-              "variant": "RK3566",
-            },
-            {
-              "name": "rk3566-quartz64-b",
-              "config": "quartz64-b-rk3566_defconfig",
-              "variant": "RK3566",
-            },
-            {
-              "name": "rk3566-radxa-cm3-io",
-              "config": "radxa-cm3-io-rk3566_defconfig",
-              "variant": "RK3566",
-            },
-            {
-              "name": "rk3566-radxa-zero-3e",
-              "config": "radxa-zero-3e-rk3566_defconfig",
-              "variant": "RK3566",
-            },
-            {
-              "name": "rk3566-radxa-zero-3w",
-              "config": "radxa-zero-3w-rk3566_defconfig",
-              "variant": "RK3566",
-            },
-            {
-              "name": "rk3566-rock-3c",
-              "config": "rock-3c-rk3566_defconfig",
-              "variant": "RK3566",
-            },
-            {
-              "name": "rk3566-soquartz-blade",
-              "config": "soquartz-blade-rk3566_defconfig",
-              "variant": "RK3566",
-            },
-            {
-              "name": "rk3566-soquartz-cm4",
-              "config": "soquartz-cm4-rk3566_defconfig",
-              "variant": "RK3566",
-            },
-            {
-              "name": "rk3566-soquartz-model-a",
-              "config": "soquartz-model-a-rk3566_defconfig",
-              "variant": "RK3566",
-            },
-            {
-              "name": "rk3568-bpi-r2-pro",
-              "config": "bpi-r2-pro-rk3568_defconfig",
-              "variant": "RK3568",
-            },
-            {
-              "name": "rk3568-generic",
-              "config": "generic-rk3568_defconfig",
-              "variant": "RK3568",
-            },
-            {
-              "name": "rk3568-nanopi-r5c",
-              "config": "nanopi-r5c-rk3568_defconfig",
-              "variant": "RK3568",
-            },
-            {
-              "name": "rk3568-nanopi-r5s",
-              "config": "nanopi-r5s-rk3568_defconfig",
-              "variant": "RK3568",
-            },
-            {
-              "name": "rk3568-odroid-m1",
-              "config": "odroid-m1-rk3568_defconfig",
-              "variant": "RK3568",
-            },
-            {
-              "name": "rk3568-radxa-e25",
-              "config": "radxa-e25-rk3568_defconfig",
-              "variant": "RK3568",
-              "baudrate": "115200",
-            },
-            {
-              "name": "rk3568-rock-3a",
-              "config": "rock-3a-rk3568_defconfig",
-              "variant": "RK3568",
-            },
-            {
-              "name": "rk3568-rock-3b",
-              "config": "rock-3b-rk3568_defconfig",
-              "variant": "RK3568",
             },
           ]
 
